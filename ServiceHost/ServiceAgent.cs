@@ -24,10 +24,10 @@
 
         protected override void OnStart(string[] args)
         {
-            _process = new System.Diagnostics.Process();
-            _process.StartInfo.FileName = this._command;
-            _process.StartInfo.Arguments = this._arguments;
-            _process.Start();
+            this._process = new System.Diagnostics.Process();
+            this._process.StartInfo.FileName = this._command;
+            this._process.StartInfo.Arguments = this._arguments;
+            this._process.Start();
         }
 
         protected override void OnStop()
