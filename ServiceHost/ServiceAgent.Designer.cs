@@ -1,37 +1,45 @@
-﻿namespace ServiceHost
+﻿// <copyright file="ServiceAgent.Designer.cs" company="Gareth Flowers">
+//     Copyright Gareth Flowers. All rights reserved.
+// </copyright>
+
+namespace ServiceHost
 {
-	partial class ServiceAgent
-	{
-		/// <summary> 
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    /// <summary>
+    /// Primary Service Handler
+    /// </summary>
+    internal partial class ServiceAgent
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (this.components != null))
+            {
+                this.components.Dispose();
+            }
 
-		#region Component Designer generated code
+            base.Dispose(disposing);
+        }
 
-		/// <summary> 
-		/// Required method for Designer support - do not modify 
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-			this.ServiceName = "ServiceAgent";
-		}
+        #region Component Designer generated code
 
-		#endregion
-	}
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            this.ServiceName = "ServiceAgent";
+        }
+
+        #endregion
+    }
 }

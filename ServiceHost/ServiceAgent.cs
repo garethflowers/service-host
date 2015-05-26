@@ -1,49 +1,82 @@
-﻿namespace ServiceHost
+﻿// <copyright file="ServiceAgent.cs" company="Gareth Flowers">
+//     Copyright Gareth Flowers. All rights reserved.
+// </copyright>
+
+namespace ServiceHost
 {
-    public partial class ServiceAgent : System.ServiceProcess.ServiceBase
+    /// <summary>
+    /// Primary Service Handler
+    /// </summary>
+    internal partial class ServiceAgent : System.ServiceProcess.ServiceBase
     {
-        private readonly string _arguments;
-        private readonly string _command;
+        /// <summary>
+        /// Additional command line arguments.
+        /// </summary>
+        private readonly string arguments;
 
-        private System.Diagnostics.Process _process;
+        /// <summary>
+        /// Command to run.
+        /// </summary>
+        private readonly string command;
 
+        /// <summary>
+        /// Command process.
+        /// </summary>
+        private System.Diagnostics.Process process;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceAgent"/> class.
+        /// </summary>
         public ServiceAgent()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceAgent"/> class.
+        /// </summary>
+        /// <param name="args">A list of command line arguments.</param>
         public ServiceAgent(string[] args)
         {
-            this._command = args[0];
+            this.InitializeComponent();
+
+            this.command = args[0];
 
             for (int i = 1; i < args.Length; i++)
             {
-                this._arguments += ' ' + args[i];
+                this.arguments += ' ' + args[i];
             }
         }
 
+        /// <summary>
+        /// Executes when a Start command is sent to the service.
+        /// </summary>
+        /// <param name="args">A list of command line arguments.</param>
         protected override void OnStart(string[] args)
         {
-            this._process = new System.Diagnostics.Process();
-            this._process.StartInfo.FileName = this._command;
-            this._process.StartInfo.Arguments = this._arguments;
-            this._process.Start();
+            this.process = new System.Diagnostics.Process();
+            this.process.StartInfo.FileName = this.command;
+            this.process.StartInfo.Arguments = this.arguments;
+            this.process.Start();
         }
 
+        /// <summary>
+        /// Executes when a Stop command is sent to the service.
+        /// </summary>
         protected override void OnStop()
         {
-            if (this._process == null || this._process.HasExited)
+            if (this.process == null || this.process.HasExited)
             {
                 return;
             }
 
             try
             {
-                this._process.Kill();
+                this.process.Kill();
             }
             finally
             {
-                this._process = null;
+                this.process = null;
             }
         }
     }
