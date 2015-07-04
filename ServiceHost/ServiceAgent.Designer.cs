@@ -1,5 +1,5 @@
 ﻿// <copyright file="ServiceAgent.Designer.cs" company="Gareth Flowers">
-//     Copyright Gareth Flowers. All rights reserved.
+// Copyright Gareth Flowers. All rights reserved.
 // </copyright>
 
 namespace ServiceHost
