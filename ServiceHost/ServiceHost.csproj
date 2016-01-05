@@ -66,7 +66,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>StrongKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\StrongKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\App.manifest</ApplicationManifest>
@@ -105,7 +105,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\App.manifest" />
-    <None Include="StrongKey.snk" />
+    <None Include="Properties\StrongKey.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
