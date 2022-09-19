@@ -1,10 +1,6 @@
-# Visual Studio Generated files
-ServiceHost/bin/
-ServiceHost/obj/
-
-# Visual Studio User-specific files
+.DS_Store
 *.suo
 *.user
-
-# Visual Studio Cache files
+ServiceHost/bin/
+ServiceHost/obj/
 StyleCop.Cache
