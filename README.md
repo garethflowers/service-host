@@ -1,7 +1,5 @@
 # Service Host
 
-[![Build Status](https://travis-ci.org/garethflowers/service-host.svg?branch=master)](https://travis-ci.org/garethflowers/service-host)
-
 A server utility for hosting any application as a Windows Service.
 
 ## Usage
